@@ -1,0 +1,144 @@
+:root {
+    --base-color: #0B2554;
+}
+
+.container {
+  width: 25%;
+  background-color: #ffffff;
+}
+
+.step {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: cream;
+}
+
+.v-stepper {
+  position: relative;
+  /*   visibility: visible; */
+}
+
+/* regular step */
+.step .circle {
+  background-color: white;
+  border: 3px solid gray;
+  border-radius: 100%;
+  width: 20px; /* +6 for border */
+  height: 20px;
+  display: inline-block;
+}
+
+.step .line {
+  top: 23px;
+  left: 12px;
+  height: 100%;
+  position: absolute;
+  border-left: 3px solid gray;
+  /* height: 120px; */
+}
+
+.step.completed .circle {
+  visibility: visible;
+  background-color: var(--base-color);
+  border-color: var(--base-color);
+}
+
+.step.completed .line {
+  border-left: 3px solid var(--base-color);
+}
+
+.step.active .circle {
+  visibility: visible;
+  border-color: var(--base-color);
+}
+
+.step.empty .circle {
+  visibility: hidden;
+}
+
+.step.empty .line {
+  top: 0;
+  height: 150%;
+  /* height: 150%; */
+  /* visibility: hidden; */
+}
+
+.step:last-child .line {
+  border-left: 3px solid white;
+  z-index: -1; /* behind the circle to completely hide */
+}
+
+.content {
+  margin-left: 20px;
+  display: inline-block;
+}
+
+/* codepen override */
+/* html *
+  {
+     font-size: 15px !important;
+     color: #000 !important;
+     font-family: Arial !important;
+  } */
+
+/* <!-- V-STEPPER --> */
+
+/* <div class="container">
+                <!-- completed -->
+                <div class="step completed">
+                    <div class="v-stepper">
+                        <div class="circle"></div>
+                        <div class="line"></div>
+                    </div>
+
+                    <div class="content">
+                        1.Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    </div>
+                </div>
+
+                <!-- active -->
+                <div class="step active">
+                    <div class="v-stepper">
+                        <div class="circle"></div>
+                        <div class="line"></div>
+                    </div>
+
+                    <div class="content">
+                        2. Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    </div>
+                </div>
+
+                <!-- empty -->
+                <div class="step empty">
+                    <div class="v-stepper">
+                        <div class="circle"></div>
+                        <div class="line"></div>
+                    </div>
+
+                    <div class="content">
+                        3. Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        Lorem Ipsum is simply dummy text of the printing and typesetting
+                    </div>
+                </div>
+
+                <!-- regular -->
+                <div class="step">
+                    <div class="v-stepper">
+                        <div class="circle"></div>
+                        <div class="line"></div>
+                    </div>
+
+                    <div class="content">
+                        4. Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    </div>
+                </div>
+
+            </div> */
+
+/* <!-- END V-STEPPER --> */
